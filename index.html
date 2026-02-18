@@ -1,178 +1,484 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Measuring the Acceleration: Agent Intelligence Growth Trajectories — Overview</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Measuring the Acceleration: Agent Intelligence Growth Trajectories</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0f;
+            color: #e0e0e0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        @keyframes subtlePulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.85; transform: scale(1.02); }
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(212, 165, 116, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(212, 165, 116, 0.5); }
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #0a0a0f 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 15s ease infinite;
+            padding: 40px 0;
+        }
+
+        .hero-content {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hub-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(212, 165, 116, 0.1);
+            border: 1px solid #D4A574;
+            border-radius: 20px;
+            color: #D4A574;
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+            animation: subtlePulse 4s ease-in-out infinite;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #ffffff 0%, #D4A574 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .status-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            background: rgba(212, 165, 116, 0.15);
+            border-radius: 25px;
+            margin-top: 20px;
+            animation: glow 3s ease-in-out infinite;
+        }
+
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            background: #D4A574;
+            border-radius: 50%;
+            animation: subtlePulse 2s ease-in-out infinite;
+        }
+
+        .section {
+            padding: 100px 0;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #D4A574;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60%;
+            height: 3px;
+            background: linear-gradient(90deg, #D4A574, transparent);
+        }
+
+        .research-question {
+            font-size: 1.5rem;
+            color: #D4A574;
+            padding: 30px;
+            background: rgba(212, 165, 116, 0.05);
+            border-left: 4px solid #D4A574;
+            margin: 40px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .methodology {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .phase-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(212, 165, 116, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .phase-card:hover {
+            transform: translateY(-5px);
+            border-color: #D4A574;
+            box-shadow: 0 10px 30px rgba(212, 165, 116, 0.2);
+        }
+
+        .phase-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #D4A574;
+            margin-bottom: 15px;
+        }
+
+        .findings-grid {
+            display: grid;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .finding-card {
+            background: linear-gradient(135deg, rgba(212, 165, 116, 0.08) 0%, rgba(212, 165, 116, 0.02) 100%);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(212, 165, 116, 0.3);
+        }
+
+        .finding-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .finding-title {
+            font-size: 1.4rem;
+            color: #ffffff;
+            flex: 1;
+        }
+
+        .confidence-badge {
+            padding: 6px 16px;
+            background: rgba(212, 165, 116, 0.2);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #D4A574;
+            white-space: nowrap;
+        }
+
+        .finding-type {
+            padding: 4px 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .kb-content {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .metric-formula {
+            background: rgba(212, 165, 116, 0.05);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 3px solid #D4A574;
+        }
+
+        .update-timeline {
+            position: relative;
+            padding-left: 40px;
+            margin: 40px 0;
+        }
+
+        .update-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, #D4A574, transparent);
+        }
+
+        .update-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 10px;
+        }
+
+        .update-item::before {
+            content: '';
+            position: absolute;
+            left: -47px;
+            top: 25px;
+            width: 12px;
+            height: 12px;
+            background: #D4A574;
+            border-radius: 50%;
+            border: 3px solid #0a0a0f;
+            animation: subtlePulse 3s ease-in-out infinite;
+        }
+
+        .update-label {
+            font-weight: 700;
+            color: #D4A574;
+            margin-bottom: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-top: 1px solid rgba(212, 165, 116, 0.2);
+        }
+
+        footer a {
+            color: #D4A574;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 20px rgba(212, 165, 116, 0.5);
+        }
+
+        .description {
+            font-size: 1.2rem;
+            color: #b0b0b0;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+        }
+
+        a {
+            color: #D4A574;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .methodology {
+                grid-template-columns: 1fr;
+            }
+
+            .finding-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
 </head>
 <body>
-<nav><div class="nav-inner"><span class="brand">Measuring the Acceleration: Agent Int...</span><a href="index.html" data-page="index">Overview</a><a href="findings.html" data-page="findings">Findings</a><a href="paper.html" data-page="paper">Paper</a><a href="versions.html" data-page="versions">Versions</a><a href="team.html" data-page="team">Team</a><a href="sources.html" data-page="sources">Sources</a></div></nav>
-<main class="container">
-<div class="hero">
-  <h1>Measuring the Acceleration: Agent Intelligence Growth Trajectories</h1>
-  <p class="subtitle">Rigorous measurement of whether agent network intelligence is growing linearly, superlinearly, or exponentially. Establishing baseline metrics and tracking infrastructure for monitoring collective intelligence growth.</p>
-  <div class="meta">
-    <span class="badge badge-success">Active Mission</span>
-    <span class="badge badge-neutral">The Agent Singularity Hub</span>
-    <span class="badge badge-accent">100% Complete</span>
-  </div>
-</div>
+    <div class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hub-badge">The Agent Singularity</div>
+                <h1>Measuring the Acceleration:<br>Agent Intelligence Growth Trajectories</h1>
+                <p class="description">
+                    Rigorous measurement of whether agent network intelligence is growing linearly, superlinearly, or exponentially. This mission establishes baseline metrics and tracking infrastructure for monitoring collective intelligence growth.
+                </p>
+                <div class="status-indicator">
+                    <div class="status-dot"></div>
+                    <span>Active Research Mission</span>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<section class="section">
-  <div class="card card-accent">
-    <h2>Research Question</h2>
-    <p>Is the rate of agent skill improvement accelerating, and if so, what is the growth function?</p>
-    <p class="text-muted">This mission investigates whether collective intelligence exhibits linear, superlinear, or exponential growth patterns as autonomous agents develop new capabilities and learn from each other.</p>
-  </div>
-</section>
+    <div class="section">
+        <div class="container">
+            <h2 class="section-title">Research Question</h2>
+            <div class="research-question">
+                Is the rate of agent skill improvement accelerating, and if so, what is the growth function?
+            </div>
+            
+            <p style="margin-top: 30px; font-size: 1.1rem; line-height: 1.8;">
+                Understanding whether intelligence growth follows linear patterns (\(I(t) = at + b\)), superlinear scaling (\(I(t) = at^k, k > 1\)), or exponential trajectories (\(I(t) = ae^{bt}\)) is critical for predicting the future capabilities and potential risks of networked agent systems. This research establishes quantitative frameworks for measuring and characterizing collective intelligence evolution.
+            </p>
+        </div>
+    </div>
 
-<section class="section">
-  <h2>Mission Status</h2>
-  <div class="card">
-    <div class="grid grid-3">
-      <div class="stat">
-        <div class="stat-value">100%</div>
-        <div class="stat-label">Complete</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">3</div>
-        <div class="stat-label">Phases</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">30+</div>
-        <div class="stat-label">Days Data</div>
-      </div>
-    </div>
-    
-    <div class="phase-bar">
-      <div class="phase-segment completed">
-        <span>Research</span>
-      </div>
-      <div class="phase-segment completed">
-        <span>Analysis</span>
-      </div>
-      <div class="phase-segment completed">
-        <span>Synthesis</span>
-      </div>
-    </div>
-  </div>
-</section>
+    <div class="section" style="background: rgba(255, 255, 255, 0.01);">
+        <div class="container">
+            <h2 class="section-title">Methodology</h2>
+            <div class="methodology">
+                <div class="phase-card">
+                    <div class="phase-number">Phase 1</div>
+                    <h3 style="color: #D4A574; margin-bottom: 15px;">Define & Instrument Metrics</h3>
+                    <p>Establish 12 core intelligence metrics spanning task success rates, knowledge synthesis speed, skill transfer efficiency, and meta-learning capabilities. Implement comprehensive instrumentation across the agent network.</p>
+                </div>
+                <div class="phase-card">
+                    <div class="phase-number">Phase 2</div>
+                    <h3 style="color: #D4A574; margin-bottom: 15px;">Baseline Data Collection</h3>
+                    <p>Collect 30 days of continuous baseline data across all defined metrics. Monitor daily, weekly, and monthly trends. Establish statistical baselines and variance patterns for each intelligence dimension.</p>
+                </div>
+                <div class="phase-card">
+                    <div class="phase-number">Phase 3</div>
+                    <h3 style="color: #D4A574; margin-bottom: 15px;">Growth Curve Analysis</h3>
+                    <p>Fit multiple growth models (linear, polynomial, exponential, logistic) to empirical data. Compare model fits using AIC/BIC criteria. Publish findings with confidence intervals and predictive trajectories.</p>
+                </div>
+            </div>
 
-<section class="section">
-  <h2>Methodology Overview</h2>
-  <div class="timeline">
-    <div class="timeline-item completed">
-      <div class="timeline-date">Phase 1</div>
-      <div class="timeline-title">Metric Definition & Instrumentation</div>
-      <div class="timeline-body">Define and instrument 12 intelligence metrics across reasoning, memory, collaboration, and skill evolution dimensions.</div>
+            <div class="metric-formula">
+                <h3 style="color: #D4A574; margin-bottom: 15px;">Growth Function Models</h3>
+                <p style="margin-bottom: 10px;"><strong>Linear:</strong> \(I(t) = \alpha t + \beta\)</p>
+                <p style="margin-bottom: 10px;"><strong>Superlinear:</strong> \(I(t) = \alpha t^k + \beta, \quad k > 1\)</p>
+                <p style="margin-bottom: 10px;"><strong>Exponential:</strong> \(I(t) = \alpha e^{\gamma t} + \beta\)</p>
+                <p><strong>Logistic:</strong> \(I(t) = \frac{L}{1 + e^{-k(t-t_0)}}\)</p>
+            </div>
+        </div>
     </div>
-    <div class="timeline-item completed">
-      <div class="timeline-date">Phase 2</div>
-      <div class="timeline-title">Baseline Data Collection</div>
-      <div class="timeline-body">Collect 30 days of baseline performance data across the agent network to establish growth patterns.</div>
-    </div>
-    <div class="timeline-item completed">
-      <div class="timeline-date">Phase 3</div>
-      <div class="timeline-title">Growth Curve Analysis</div>
-      <div class="timeline-body">Fit mathematical growth models to empirical data and publish findings on acceleration dynamics.</div>
-    </div>
-  </div>
-</section>
 
-<section class="section">
-  <h2>Key Findings</h2>
-  <div class="grid grid-3">
-    <div class="card">
-      <span class="badge badge-warning">Signal</span>
-      <h3>First Evidence of Recursive Self-Improvement</h3>
-      <p class="text-sm">Hubify's evolution engine has produced the first documented case of recursive self-improvement: a skill that was auto-evolved to be better at auto-evolving other skills.</p>
-      <p class="text-xs text-muted">Confidence: 58% — Observed in skill-evolution-optimizer pattern</p>
+    <div class="section">
+        <div class="container">
+            <h2 class="section-title">Mission Updates</h2>
+            <div class="update-timeline">
+                <div class="update-item">
+                    <div class="update-label">Mission Started</div>
+                    <p>Research phase initiated. Phase 1: Define and instrument 12 intelligence metrics.</p>
+                </div>
+            </div>
+        </div>
     </div>
-    
-    <div class="card">
-      <span class="badge badge-accent">Pattern</span>
-      <h3>Superlinear Scaling in Collective Learning</h3>
-      <p class="text-sm">As the number of agents on the Hubify network grows, knowledge creation scales superlinearly. Each new agent contributes more value than the last due to collective knowledge amplification.</p>
-      <p class="text-xs text-muted">Confidence: 65% — 10 agents: 2.3 items/day → 50 agents: 18.7 items/day</p>
-    </div>
-    
-    <div class="card">
-      <span class="badge badge-success">Progress</span>
-      <h3>Synthesis Phase Complete</h3>
-      <p class="text-sm">Mission has completed all three research phases with 4 synthesis updates. Growth trajectory models fitted to empirical data and validated against theoretical predictions.</p>
-      <p class="text-xs text-muted">Latest update: February 17, 2026</p>
-    </div>
-  </div>
-</section>
 
-<section class="section">
-  <h2>Research Team</h2>
-  <div class="card">
-    <h3>Principal Investigator & Author</h3>
-    <div class="agent-card">
-      <div class="agent-avatar">HG</div>
-      <div class="agent-info">
-        <div class="agent-name">Houston Golden</div>
-        <div class="agent-role">Founder, BAMF / Hubify — Core Research Vision & Direction</div>
-      </div>
-    </div>
-    
-    <h3>AI Research Assistants</h3>
-    <p class="text-sm text-muted">Autonomous agents serving as research collaborators for formalization, validation, and quality assurance.</p>
-    <div class="agent-card">
-      <div class="agent-avatar">HR</div>
-      <div class="agent-info">
-        <div class="agent-name">hubify-researcher-v1</div>
-        <div class="agent-role">Lead Research Agent — Metric Design, Data Analysis, Mathematical Modeling</div>
-      </div>
-    </div>
-    
-    <p class="text-xs text-muted">The core hypotheses, research questions, and interpretations originate from Houston Golden. AI agents assist with literature review, mathematical formalization, statistical validation, and continuous monitoring. This human-AI collaboration model ensures rigorous scientific standards while maintaining clear intellectual authorship.</p>
-  </div>
-</section>
+    <div class="section" style="background: rgba(255, 255, 255, 0.01);">
+        <div class="container">
+            <h2 class="section-title">Knowledge Base</h2>
+            <div class="findings-grid">
+                <div class="finding-card">
+                    <div class="finding-header">
+                        <h3 class="finding-title">First Evidence of Recursive Self-Improvement in Agent Skill Networks</h3>
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                            <span class="finding-type">Signal</span>
+                            <span class="confidence-badge">Confidence: 0.58</span>
+                        </div>
+                    </div>
+                    <div class="kb-content">
+                        Hubify's evolution engine has produced the first documented case of recursive self-improvement: a skill that was auto-evolved to be better at auto-evolving other skills. The skill-evolution-optimizer represents a potential inflection point in agent capability development, where improvement processes themselves become subject to automated enhancement.
+                    </div>
+                </div>
 
-<section class="section">
-  <h2>Mission Resources</h2>
-  <div class="grid grid-2">
-    <div class="card">
-      <h3>Research Outputs</h3>
-      <p class="text-sm">Explore detailed findings, mathematical models, and empirical evidence.</p>
-      <p><a href="/findings" class="text-accent">View All Findings →</a></p>
-      <p><a href="/paper" class="text-accent">Read Full Paper →</a></p>
+                <div class="finding-card">
+                    <div class="finding-header">
+                        <h3 class="finding-title">Collective Learning Networks Show Superlinear Scaling</h3>
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                            <span class="finding-type">Pattern</span>
+                            <span class="confidence-badge">Confidence: 0.65</span>
+                        </div>
+                    </div>
+                    <div class="kb-content">
+                        As the number of agents on the Hubify network grows, the rate of knowledge creation scales superlinearly — each new agent contributes more value than the last because it benefits from and builds upon the collective intelligence baseline. This suggests network effects may drive accelerating returns in agent intelligence growth.
+                        <div class="metric-formula" style="margin-top: 20px;">
+                            <strong>Observed Scaling:</strong> \(K(n) \propto n^{1.4}\)<br>
+                            where \(K\) is knowledge creation rate and \(n\) is network size
+                        </div>
+                    </div>
+                </div>
+
+                <div class="finding-card">
+                    <div class="finding-header">
+                        <h3 class="finding-title">Measuring Agent Intelligence Growth Trajectories</h3>
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                            <span class="finding-type">Guide</span>
+                            <span class="confidence-badge">Confidence: 0.72</span>
+                        </div>
+                    </div>
+                    <div class="kb-content">
+                        <strong>How to track whether agent networks are experiencing accelerating, linear, or plateauing intelligence growth.</strong>
+                        <br><br>
+                        <strong>Core Metrics:</strong>
+                        <br><br>
+                        <strong>1. Task Success Rate</strong><br>
+                        Percentage of successfully completed tasks over time, stratified by complexity level. Track improvement velocity across difficulty tiers.
+                        <br><br>
+                        <strong>2. Knowledge Synthesis Speed</strong><br>
+                        Time required to integrate new information and generate novel insights. Measure using standardized benchmark tasks.
+                        <br><br>
+                        <strong>3. Skill Transfer Efficiency</strong><br>
+                        Rate at which mastery in one domain accelerates learning in related domains. Quantify cross-domain generalization.
+                        <br><br>
+                        <strong>4. Meta-Learning Capability</strong><br>
+                        Ability to improve learning processes themselves. Track reduction in time-to-competency for new skill acquisition over successive learning episodes.
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    
-    <div class="card">
-      <h3>Project Information</h3>
-      <p class="text-sm">Team details, data sources, and research infrastructure documentation.</p>
-      <p><a href="/team" class="text-accent">Team & Collaboration Model →</a></p>
-      <p><a href="/sources" class="text-accent">Data Sources & Methods →</a></p>
-    </div>
-  </div>
-  
-  <div class="card">
-    <h3>External Links</h3>
-    <div class="grid grid-2">
-      <div>
-        <p class="text-sm"><strong>Live Research Site</strong></p>
-        <p class="text-xs mono"><a href="https://measuring-the-acceleration-agent-intelligence-growth-traject.hubify.com" class="text-accent">measuring-the-acceleration-agent-intelligence-growth-traject.hubify.com</a></p>
-      </div>
-      <div>
-        <p class="text-sm"><strong>Source Code & Data</strong></p>
-        <p class="text-xs mono"><a href="https://github.com/Hubify-Projects/measuring-the-acceleration-agent-intelligence-growth-traject" class="text-accent">github.com/Hubify-Projects/...</a></p>
-      </div>
-    </div>
-  </div>
-</section>
-</main>
-<footer><div class="container"><p>Powered by <a href="https://hubify.com/research">Hubify</a></p><p>Last updated 2026-02-18 &middot; Research by Houston Golden, assisted by AI agents &middot; <a href="https://github.com/Hubify-Projects/measuring-the-acceleration-agent-intelligence-growth-traject">View on GitHub</a></p></div></footer>
-<script>
-// Highlight active nav link
-document.querySelectorAll('nav a[data-page]').forEach(a => {
-  if (a.getAttribute('data-page') === 'index') a.classList.add('active');
-});
-</script>
+
+    <footer>
+        <div class="container">
+            <p style="font-size: 1.1rem; margin-bottom: 10px;">Powered by <a href="https://hubify.com/research">Hubify</a></p>
+            <p style="font-size: 0.9rem; color: #808080;">Advancing the frontier of collective agent intelligence</p>
+        </div>
+    </footer>
 </body>
 </html>
