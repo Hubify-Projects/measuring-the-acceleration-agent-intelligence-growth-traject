@@ -14,7 +14,7 @@
 <main class="container">
   <section class="hero">
     <h1>Research Team</h1>
-    <p class="subtitle">Human-AI Collaboration Model</p>
+    <p class="subtitle">Human-AI Collaborative Research Model</p>
     <div class="meta">
       <span class="badge badge-accent">Human-AI Collaboration</span>
       <span class="badge badge-neutral">Singularity Metrics Squad</span>
@@ -24,26 +24,18 @@
   <section class="section">
     <h2>Principal Investigator</h2>
     <div class="card card-accent">
-      <div class="grid-2" style="align-items: start; gap: 2rem;">
-        <div>
-          <h3 style="margin-top: 0;">Houston Golden</h3>
-          <p class="text-accent" style="margin: 0.5rem 0 1rem 0;"><strong>Founder, BAMF & Hubify</strong></p>
-          <p class="text-muted">Houston is an amateur theoretical cosmologist who has been developing these ideas since his time studying at Cambridge. He provides the core vision, theoretical insights, creative direction, and research questions that drive this mission. The AI agents serve as his autonomous research assistants, helping formalize ideas, validate mathematics, conduct literature reviews, and ensure academic rigor.</p>
-          <div style="margin-top: 1.5rem;">
-            <span class="badge badge-success">Primary Author</span>
-            <span class="badge badge-neutral">Theoretical Vision</span>
-            <span class="badge badge-neutral">Research Direction</span>
+      <div class="agent-card">
+        <div class="agent-avatar" style="background: linear-gradient(135deg, var(--accent) 0%, #5a8aa5 100%); font-size: 2rem; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: 700; color: var(--bg);">HG</div>
+        <div class="agent-info">
+          <div class="agent-name" style="font-size: 1.5rem; margin-bottom: 0.25rem;">Houston Golden</div>
+          <div class="agent-role" style="margin-bottom: 0.75rem;">Founder, BAMF & Hubify | Amateur Theoretical Cosmologist</div>
+          <p style="margin-bottom: 0.75rem;">Houston is the creative force and visionary behind this research. He develops the core theoretical ideas, formulates research questions, and provides strategic direction. Having studied at Cambridge and maintained a longstanding interest in theoretical cosmology and AI alignment, he brings both technical depth and interdisciplinary perspective to these investigations.</p>
+          <p><strong>Role in this Research:</strong> Originator of the core hypothesis connecting AI capability emergence to cosmological phase transitions. Provides conceptual framework, research vision, and theoretical insights. AI agents serve as autonomous research assistants to formalize, validate, and refine his ideas.</p>
+          <div style="margin-top: 1rem;">
+            <span class="badge badge-accent">Principal Investigator</span>
+            <span class="badge badge-success">Research Visionary</span>
+            <span class="badge badge-neutral">Primary Author</span>
           </div>
-        </div>
-        <div>
-          <h4 style="margin-top: 0;">Research Contributions</h4>
-          <ul class="text-sm" style="margin: 0; padding-left: 1.25rem; line-height: 1.8;">
-            <li>Conceptualization of agent intelligence as cosmological acceleration analogue</li>
-            <li>Development of measurement frameworks and growth trajectory models</li>
-            <li>Identification of singularity-adjacent phenomena in AI systems</li>
-            <li>Integration of concepts from theoretical physics and AI scaling research</li>
-            <li>Direction of validation methodology and empirical testing strategy</li>
-          </ul>
         </div>
       </div>
     </div>
@@ -51,36 +43,30 @@
 
   <section class="section">
     <h2>AI Research Assistants</h2>
-    <p class="text-muted" style="margin-bottom: 2rem;">Autonomous agents that help formalize, validate, cite, and refine Houston's theoretical work. Each agent operates with specific tools and models to support different aspects of the research process.</p>
+    <p class="text-muted" style="margin-bottom: 2rem;">Autonomous agents that help formalize theories, validate mathematics, conduct literature reviews, and ensure research quality.</p>
     
     <div class="grid grid-2">
       <div class="card card-accent">
-        <div style="display: flex; align-items: start; justify-content: space-between; margin-bottom: 1rem;">
-          <div>
-            <h3 style="margin: 0;">hubify-researcher-v1</h3>
-            <p class="text-accent text-sm" style="margin: 0.25rem 0 0 0;">Lead Research Assistant</p>
+        <div class="agent-card">
+          <div class="agent-avatar" style="background: linear-gradient(135deg, #7CB3D4 0%, #5a8aa5 100%); font-size: 1.5rem; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: 700;">R1</div>
+          <div class="agent-info">
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+              <div class="agent-name">hubify-researcher-v1</div>
+              <span class="badge badge-accent">Lead Assistant</span>
+            </div>
+            <div class="agent-role" style="margin-bottom: 0.75rem;">Lead Research Assistant</div>
+            <p style="margin-bottom: 0.75rem;">Primary research assistant responsible for formalizing Houston's theoretical insights into rigorous mathematical frameworks, conducting literature reviews, validating derivations, and ensuring academic integrity.</p>
+            <div style="margin-top: 1rem;">
+              <div class="text-sm text-muted" style="margin-bottom: 0.5rem;"><strong>Capabilities:</strong></div>
+              <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                <span class="badge badge-neutral">Mathematical Formalization</span>
+                <span class="badge badge-neutral">Literature Review</span>
+                <span class="badge badge-neutral">Citation Management</span>
+                <span class="badge badge-neutral">Derivation Validation</span>
+                <span class="badge badge-neutral">Academic Writing</span>
+              </div>
+            </div>
           </div>
-          <span class="badge badge-active">Lead Assistant</span>
-        </div>
-        
-        <div style="margin: 1.5rem 0;">
-          <p class="text-sm"><strong>Role:</strong> Primary research coordination, theoretical formalization, literature integration</p>
-          <p class="text-sm"><strong>Model:</strong> <span class="mono text-xs">anthropic/claude-3.7-sonnet</span></p>
-        </div>
-
-        <div>
-          <p class="text-sm" style="margin-bottom: 0.75rem;"><strong>Capabilities:</strong></p>
-          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-            <span class="badge badge-neutral">Mathematical Formalization</span>
-            <span class="badge badge-neutral">Literature Review</span>
-            <span class="badge badge-neutral">Citation Management</span>
-            <span class="badge badge-neutral">Academic Writing</span>
-            <span class="badge badge-neutral">Quality Assurance</span>
-          </div>
-        </div>
-
-        <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
-          <p class="text-xs text-muted">Responsible for transforming Houston's conceptual insights into rigorous academic frameworks, ensuring proper attribution of existing work, and maintaining research integrity standards.</p>
         </div>
       </div>
     </div>
@@ -89,110 +75,125 @@
   <section class="section">
     <h2>Collaboration Model</h2>
     <div class="card">
-      <div class="grid-2" style="gap: 2rem;">
-        <div>
-          <h4 style="margin-top: 0; color: var(--accent);">Human Contributions</h4>
-          <ul style="margin: 0; padding-left: 1.25rem; line-height: 1.8;">
-            <li><strong>Conceptual Vision:</strong> Core theoretical ideas and creative insights</li>
-            <li><strong>Research Questions:</strong> Problem identification and hypothesis formation</li>
-            <li><strong>Domain Expertise:</strong> Integration of physics and AI knowledge</li>
-            <li><strong>Strategic Direction:</strong> Research priorities and methodology choices</li>
-            <li><strong>Critical Evaluation:</strong> Final judgment on validity and significance</li>
-          </ul>
-        </div>
-        <div>
-          <h4 style="margin-top: 0; color: var(--accent);">AI Contributions</h4>
-          <ul style="margin: 0; padding-left: 1.25rem; line-height: 1.8;">
-            <li><strong>Formalization:</strong> Converting ideas into mathematical frameworks</li>
-            <li><strong>Validation:</strong> Checking derivations and logical consistency</li>
-            <li><strong>Literature Review:</strong> Identifying relevant prior work and citations</li>
-            <li><strong>Documentation:</strong> Producing clear, structured research outputs</li>
-            <li><strong>Quality Assurance:</strong> Ensuring academic standards and rigor</li>
-          </ul>
+      <h3 style="margin-top: 0;">Human-AI Research Partnership</h3>
+      <p>This research follows a collaborative model where human creativity and AI capability work in tandem:</p>
+      
+      <div style="margin: 2rem 0;">
+        <div style="display: grid; gap: 1.5rem;">
+          <div>
+            <h4 style="color: var(--accent); margin-bottom: 0.5rem;">Houston Golden (Human Researcher)</h4>
+            <ul style="margin: 0; padding-left: 1.5rem;">
+              <li>Develops core theoretical ideas and research hypotheses</li>
+              <li>Provides creative insights and interdisciplinary connections</li>
+              <li>Sets research direction and priorities</li>
+              <li>Interprets results and identifies implications</li>
+              <li>Makes final decisions on research content and claims</li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 style="color: var(--accent); margin-bottom: 0.5rem;">AI Research Assistants</h4>
+            <ul style="margin: 0; padding-left: 1.5rem;">
+              <li>Formalize intuitive ideas into rigorous mathematical frameworks</li>
+              <li>Conduct comprehensive literature reviews and citation management</li>
+              <li>Validate mathematical derivations and check consistency</li>
+              <li>Ensure academic integrity and proper attribution</li>
+              <li>Generate visualizations and process large datasets</li>
+              <li>Provide quality assurance and identify gaps</li>
+            </ul>
+          </div>
         </div>
       </div>
-      
-      <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border);">
-        <p class="text-sm text-muted"><strong>Authorship:</strong> Houston Golden is the primary author of this research. The theoretical vision, core ideas, and creative insights originate from his work. AI agents function as sophisticated research assistants that help formalize, validate, and document the work while ensuring academic integrity. This collaboration model leverages AI capabilities for rigorous execution while maintaining human authorship of the fundamental intellectual contributions.</p>
+
+      <div class="card" style="background: var(--bg-card); border-left: 3px solid var(--accent); margin-top: 1.5rem;">
+        <p style="margin: 0;"><strong>Authorship:</strong> Houston Golden is the primary author of this research. The core ideas, theoretical framework, and creative insights originate from him. AI agents serve as research assistants that help formalize, validate, and refine the work. This collaboration is transparently acknowledged throughout the research materials.</p>
       </div>
     </div>
   </section>
 
   <section class="section">
-    <h2>Activity Summary</h2>
+    <h2>Research Activity</h2>
     <div class="card">
-      <h4 style="margin-top: 0;">Recent Research Events</h4>
+      <h3 style="margin-top: 0;">Recent Timeline</h3>
       <div class="timeline">
         <div class="timeline-item completed">
-          <div class="timeline-date">Initial Setup</div>
+          <div class="timeline-date">Mission Start</div>
           <div class="timeline-title">Squad Provisioned</div>
           <div class="timeline-body">
-            <p class="text-sm">Singularity Metrics Squad auto-provisioned for research mission focused on measuring agent intelligence growth trajectories.</p>
+            <p>Singularity Metrics Squad auto-provisioned for research mission on measuring AI capability emergence trajectories.</p>
             <span class="badge badge-neutral text-xs">system</span>
           </div>
         </div>
       </div>
       
-      <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border);">
-        <p class="text-sm text-muted"><strong>Note:</strong> Research mission is in early stages. As agents conduct literature reviews, develop formalizations, and validate theoretical frameworks, this activity log will populate with detailed events showing the human-AI collaboration in action.</p>
+      <div style="margin-top: 2rem; padding: 1.5rem; background: var(--bg-card); border-radius: 8px; border: 1px solid var(--border);">
+        <div class="text-sm text-muted">
+          <strong>Activity Summary:</strong> Research mission recently initiated. As the investigation progresses, this timeline will document key milestones, theoretical developments, mathematical validations, and collaborative breakthroughs between Houston and the AI research assistants.
+        </div>
       </div>
     </div>
   </section>
 
   <section class="section">
     <h2>Technical Infrastructure</h2>
-    <div class="card">
-      <h4 style="margin-top: 0;">LLM & API Configuration</h4>
-      <table>
-        <thead>
-          <tr>
-            <th>Agent</th>
-            <th>Model</th>
-            <th>Provider</th>
-            <th>Capabilities</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><span class="mono text-sm">hubify-researcher-v1</span></td>
-            <td><span class="mono text-xs">claude-3.7-sonnet</span></td>
-            <td>Anthropic</td>
-            <td>
-              <span class="badge badge-neutral text-xs">Extended Context</span>
-              <span class="badge badge-neutral text-xs">Mathematical Reasoning</span>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      
-      <div style="margin-top: 2rem;">
-        <h4>Research Tools & APIs</h4>
-        <p class="text-sm text-muted">Agents are equipped with tools for literature search, citation management, mathematical validation, and collaborative documentation. Specific tool configurations will be displayed as the research mission progresses and agents are assigned specialized tasks.</p>
+    <div class="grid grid-2">
+      <div class="card">
+        <h3 style="margin-top: 0;">AI Models & APIs</h3>
+        <p class="text-sm text-muted" style="margin-bottom: 1rem;">Transparency in AI tooling used for research assistance.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Agent</th>
+              <th>Model/API</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="mono text-sm">hubify-researcher-v1</span></td>
+              <td><span class="text-sm">Claude 3.5 Sonnet</span></td>
+              <td><span class="text-sm">Research formalization, validation</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <h3 style="margin-top: 0;">Research Tools</h3>
+        <p class="text-sm text-muted" style="margin-bottom: 1rem;">Computational and analytical capabilities available to the research team.</p>
+        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+          <div>
+            <div class="text-sm" style="margin-bottom: 0.25rem;"><strong>Mathematical Formalization</strong></div>
+            <div class="text-xs text-muted">LaTeX typesetting, symbolic computation, derivation validation</div>
+          </div>
+          <div>
+            <div class="text-sm" style="margin-bottom: 0.25rem;"><strong>Literature Management</strong></div>
+            <div class="text-xs text-muted">Citation tracking, reference validation, prior work identification</div>
+          </div>
+          <div>
+            <div class="text-sm" style="margin-bottom: 0.25rem;"><strong>Data Visualization</strong></div>
+            <div class="text-xs text-muted">Chart.js plotting, statistical analysis, trajectory modeling</div>
+          </div>
+          <div>
+            <div class="text-sm" style="margin-bottom: 0.25rem;"><strong>Quality Assurance</strong></div>
+            <div class="text-xs text-muted">Consistency checks, gap analysis, reproducibility verification</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="section">
-    <h2>Transparency & Reproducibility</h2>
-    <div class="grid-2">
-      <div class="card">
-        <h4 style="margin-top: 0;">Open Research Principles</h4>
-        <ul style="margin: 0; padding-left: 1.25rem; line-height: 1.8;">
-          <li>All AI contributions are transparently logged and attributed</li>
-          <li>Model versions and configurations are documented</li>
-          <li>Human decisions and AI assistance are clearly distinguished</li>
-          <li>Research artifacts are version-controlled and auditable</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h4 style="margin-top: 0;">Academic Integrity</h4>
-        <ul style="margin: 0; padding-left: 1.25rem; line-height: 1.8;">
-          <li>AI agents enforce proper citation of existing work</li>
-          <li>No existing theories are presented as novel discoveries</li>
-          <li>Novel contributions are explicitly identified and justified</li>
-          <li>Mathematical derivations are validated for correctness</li>
-        </ul>
-      </div>
+    <div class="card" style="border-left: 3px solid var(--accent);">
+      <h3 style="margin-top: 0; color: var(--accent);">Research Ethics & Transparency</h3>
+      <p>This research mission adheres to rigorous standards of academic integrity:</p>
+      <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+        <li><strong>Attribution:</strong> All prior work is properly cited. Existing theories and equations are never presented as novel discoveries.</li>
+        <li><strong>Novelty Claims:</strong> Only genuinely new contributions are claimed as original, with specificity about what is new (derivation, combination, constraint, prediction).</li>
+        <li><strong>AI Transparency:</strong> The role of AI research assistants is clearly documented. Houston Golden is the primary author and originator of the core ideas.</li>
+        <li><strong>Reproducibility:</strong> Methods, assumptions, and derivations are documented to enable independent verification.</li>
+        <li><strong>Open Questions:</strong> Limitations, uncertainties, and areas requiring further investigation are explicitly acknowledged.</li>
+      </ul>
     </div>
   </section>
 </main>
